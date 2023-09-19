@@ -6,47 +6,50 @@ import {
     View,
     Platform,
     KeyboardAvoidingView,
+    TouchableWithoutFeedback,
+    Keyboard,
 } from "react-native";
 import {LinearGradient} from "expo-linear-gradient";
 import Button from "./buttons/loginButton";
 
 export default function Login() {
     return (
-        <LinearGradient
-            colors={["#7BD2F6", "#946DED"]}
-            style={styles.container}
-        >
-            <KeyboardAvoidingView
-                behavor={Platform.OS === "ios" ? "padding" : "heidth"}
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <LinearGradient
+                colors={["#7BD2F6", "#946DED"]}
                 style={styles.container}
             >
-                <Text style={styles.h1}>Faça Seu Login</Text>
+                <KeyboardAvoidingView
+                    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                    style={styles.container}
+                >
+                    <Text style={styles.h1}>Faça Seu Login</Text>
 
-                <View style={styles.viewLoginSenha}>
-                    <Text style={styles.labelLoginSenha}>USER:</Text>
+                    <View style={styles.viewLoginSenha}>
+                        <Text style={styles.labelLoginSenha}>USER:</Text>
 
-                    <TextInput
-                        textContentType="nickname"
-                        style={styles.inputUser}
-                        placeholder="Digite seu Usuário"
-                    />
-                </View>
+                        <TextInput
+                            textContentType="nickname"
+                            style={styles.inputUserPass}
+                            placeholder="Digite seu Usuário"
+                        />
+                    </View>
 
-                <View style={styles.viewLoginSenha}>
-                    <Text style={styles.labelLoginSenha}>PASS:</Text>
+                    <View style={styles.viewLoginSenha}>
+                        <Text style={styles.labelLoginSenha}>PASS:</Text>
 
-                    <TextInput
-                        style={styles.inputPass}
-                        placeholder="Digite sua Senha"
-                        textContentType="password"
-                        secureTextEntry={true}
-                    />
-                </View>
+                        <TextInput
+                            style={styles.inputUserPass}
+                            placeholder="Digite sua Senha"
+                            textContentType="password"
+                            secureTextEntry={true}
+                        />
+                    </View>
 
-                <Button />
-
-            </KeyboardAvoidingView>
-        </LinearGradient>
+                    <Button />
+                </KeyboardAvoidingView>
+            </LinearGradient>
+        </TouchableWithoutFeedback>
     );
 }
 
@@ -57,6 +60,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         margin: 0,
         padding: 0,
+        width: "100%",
     },
 
     h1: {
@@ -70,30 +74,19 @@ const styles = StyleSheet.create({
         textShadowRadius: 3,
     },
 
-    inputUser: {
+    inputUserPass: {
         color: "#fff",
+        fontSize: 18,
+        fontWeight: "500",
         alignItems: "center",
         justifyContent: "center",
         width: "80%",
-        paddingLeft: 10,
+        paddingLeft: 15,
         paddingTop: 5,
-        marginBottom: 10,
+        marginBottom: 15,
         borderColor: "#fff",
-        borderBottomWidth: 1,
-        fontSize: 16,
-    },
-
-    inputPass: {
-        color: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "80%",
-        paddingLeft: 10,
-        paddingTop: 5,
-        marginBottom: 10,
-        borderColor: "#fff",
-        borderBottomWidth: 1,
-        fontSize: 16,
+        borderWidth: 2,
+        borderRadius: 10,
     },
 
     viewLoginSenha: {
@@ -107,7 +100,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: "600",
         color: "#fff",
-        marginRight: 5,
+        marginRight: 10,
         textShadowColor: "#000",
         textShadowOffset: {width: 2, height: 2},
         textShadowRadius: 3,
