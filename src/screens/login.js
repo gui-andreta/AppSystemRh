@@ -104,6 +104,6 @@ const styles = StyleSheet.create({
         textShadowColor: "#000",
         textShadowOffset: {width: 2, height: 2},
         textShadowRadius: 3,
-        paddingBottom: 12,
+        paddingBottom: 13,
     },
 });
