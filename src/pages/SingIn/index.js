@@ -10,9 +10,9 @@ import {
     Keyboard,
 } from "react-native";
 import {LinearGradient} from "expo-linear-gradient";
-import Button from "./buttons/loginButton";
+import Button from "../Buttons/loginButton";
 
-export default function Login() {
+export default function SignIn() {
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <LinearGradient
