@@ -8,9 +8,9 @@ import {
     KeyboardAvoidingView,
     TouchableWithoutFeedback,
     Keyboard,
+    Button
 } from "react-native";
 import {LinearGradient} from "expo-linear-gradient";
-import Button from "../Buttons/loginButton";
 
 export default function SignIn() {
     return (
@@ -46,7 +46,7 @@ export default function SignIn() {
                         />
                     </View>
 
-                    <Button />
+                    <Button title="Sign In" onPress={ () => {} } />
                 </KeyboardAvoidingView>
             </LinearGradient>
         </TouchableWithoutFeedback>

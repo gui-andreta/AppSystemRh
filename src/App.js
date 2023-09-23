@@ -1,14 +1,12 @@
-import 'react-native-gesture-handle';
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from "@react-navigation/native";
 
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import SignIn from "./pages/SingIn/index.js";
+import Routes from "./routes";
+import SignIn from "./pages/SingIn";
 
 export default function App() {
-  return (
-      <NavigationContainer>
-          <SignIn />
-      </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <Routes />
+        </NavigationContainer>
+    );
 }

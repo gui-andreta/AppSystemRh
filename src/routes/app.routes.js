@@ -8,5 +8,5 @@ const AppStack = createNativeStackNavigator();
 export default function AppRoutes() {
     <AppStack.Navigator>
         <AppStack.Screen name="Dashboard" component={Dashboard} />
-    </AppStack.Navigator>;
+    </AppStack.Navigator>
 }
